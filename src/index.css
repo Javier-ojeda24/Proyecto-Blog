@@ -114,10 +114,11 @@ body {
   padding-left: 25px;
   padding-right: 25px;
 }
-
+.button,
 button,
 input[type="submit"],
 input[type="button"] {
+  text-decoration: none;
   width: 100px;
   background: #0b70e1;
   color: white;
@@ -148,6 +149,7 @@ input[type="button"] {
   background: #f6f7f9;
   border-left: 1px solid #ddd;
   padding: 20px;
+  min-height: 490px;
 }
 
 .lateral > div {
@@ -212,4 +214,24 @@ input[type="button"] {
   .articulo-item {
     width: 80%;
   }
+}
+
+.jumbo {
+  width: 85%;
+  padding: 55px;
+  padding-bottom: 75px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 25px auto;
+}
+
+.jumbo h1 {
+  font-size: 35px;
+  color: #444;
+}
+
+.jumbo p {
+  display: block;
+  margin-bottom: 40px;
 }

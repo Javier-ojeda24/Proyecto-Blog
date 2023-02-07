@@ -12,10 +12,7 @@ export const Nav = () => {
           <NavLink to="/articulos">Articulos</NavLink>
         </li>
         <li>
-          <NavLink to="crear">Crear Articulos</NavLink>
-        </li>
-        <li>
-          <NavLink to="contacto">Contacto</NavLink>
+          <NavLink to="crear-articulos">Crear Articulos</NavLink>
         </li>
       </ul>
     </nav>
