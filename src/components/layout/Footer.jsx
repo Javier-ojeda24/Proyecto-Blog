@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className="footer">
+      &copy;Proyecto con React{" "}
+      <a href="https://www.linkedin.com/in/javier-ojeda-728356241/">
+        Linkedin Javier-Ojeda
+      </a>
+    </footer>
+  );
+};
