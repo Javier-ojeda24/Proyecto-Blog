@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Global } from "../../helpers/Global";
 
 export const Articulos = () => {
   const [articulos, setArticulos] = useState([]);
@@ -8,7 +9,7 @@ export const Articulos = () => {
     conseguirArticulos();
   }, []);
   const conseguirArticulos = async () => {
-    const url = "http://localhost:3900/api/articulos";
+    const url = `${Global.url}articulos`;
     const peticion = await fetch(url, {
       method: "GET",
     });
