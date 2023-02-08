@@ -95,11 +95,10 @@ body {
 .content {
   grid-area: content;
   background: #f6f7f9;
-
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: initial;
   flex-grow: 1;
 }
 
