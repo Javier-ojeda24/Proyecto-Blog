@@ -112,7 +112,25 @@ body {
   padding-bottom: 60px;
   padding-left: 25px;
   padding-right: 25px;
+  text-align: left;
+  display: flex;
+  max-height: 225px;
 }
+.articulo-item .mascara {
+  width: 20%;
+  overflow: hidden;
+  margin-right: 40px;
+}
+.articulo-item .mascara img {
+  width: 100%;
+}
+.articulo-item h3 {
+  font-size: 30px;
+}
+.articulo-item .edit {
+  margin-right: 20px;
+}
+
 .button,
 button,
 input[type="submit"],
