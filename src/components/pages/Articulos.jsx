@@ -5,6 +5,7 @@ import { Global } from "../../helpers/Global";
 
 export const Articulos = () => {
   const [articulos, setArticulos] = useState([]);
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
     conseguirArticulos();
@@ -14,10 +15,12 @@ export const Articulos = () => {
     if (datos.status === "success") {
       setArticulos(datos.articulos);
     }
+    setCargando(false);
   };
 
   return (
     <>
+      {cargando ? "Cargando..." : ""}
       {articulos.length >= 1 ? (
         articulos.map((articulo) => {
           return (
