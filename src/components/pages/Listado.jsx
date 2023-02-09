@@ -1,7 +1,17 @@
 import React from "react";
 import { Global } from "../../helpers/Global";
+import { Peticion } from "../../helpers/Peticion";
 
 export const Listado = ({ articulos, setArticulos }) => {
+  const eliminar = async (id) => {
+    let { datos } = await Peticion(Global.url + "articulo/" + id, "DELETE");
+    if (datos == "success") {
+      let articulosActualizados = articulos.filter((e) => e._id !== id);
+      console.log(articulosActualizados);
+      setArticulos(articulosActualizados);
+    }
+  };
+
   return articulos.map((articulo) => {
     return (
       <article key={articulo._id} className="articulo-item">
@@ -21,7 +31,14 @@ export const Listado = ({ articulos, setArticulos }) => {
           <p className="description">{articulo.contenido}</p>
 
           <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
+          <button
+            className="delete"
+            onClick={() => {
+              eliminar(articulo._id);
+            }}
+          >
+            Borrar
+          </button>
         </div>
       </article>
     );

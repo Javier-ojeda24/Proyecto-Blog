@@ -10,7 +10,7 @@ export const Articulos = () => {
 
   useEffect(() => {
     conseguirArticulos();
-  }, []);
+  }, [articulos]);
   const conseguirArticulos = async () => {
     const { datos, cargando } = await Peticion(`${Global.url}articulos`, "GET");
     if (datos.status === "success") {
