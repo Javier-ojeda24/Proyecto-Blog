@@ -7,23 +7,43 @@ import { Global } from "../../helpers/Global";
 export const Crear = () => {
   const { formulario, enviado, cambiado } = useForm({});
   const [resultado, setResultado] = useState("no_enviado");
+
   const guardarArticulo = async (e) => {
     e.preventDefault();
-    //Recoger ddatos del formulario
+    //Recoger datos del formulario
     let nuevoArticulo = formulario;
 
     //Guardar articulo en el back
-    const { datos, cargando } = await Peticion(
+    const { datos } = await Peticion(
       Global.url + "crear",
       "POST",
       nuevoArticulo
     );
     if (datos.status === "success") {
       setResultado("guardado");
+
+      //Subir la imagen
+      const fileInput = document.querySelector("#file");
+
+      const formData = new FormData();
+      formData.append("file0", fileInput.files[0]);
+
+      const subida = await Peticion(
+        Global.url + "subir-imagen/" + datos.articulo._id,
+        "POST",
+        formData,
+        true
+      );
+      // console.log(subida);
+
+      if (subida.status === "success") {
+        setResultado("guardado");
+      } else {
+        setResultado("error");
+      }
     } else {
       setResultado("error");
     }
-    // console.log(datos);
   };
 
   return (
@@ -32,7 +52,7 @@ export const Crear = () => {
       <p>Formulario para crear un articulo</p>
 
       <strong>
-        {resultado == "error" ? "Los datos proporcionados con incorrectos" : ""}
+        {resultado == "error" ? "Los datos proporcionados son incorrectos" : ""}
       </strong>
       {/* Creando Formulario */}
       <form className="formulario" onSubmit={guardarArticulo}>
