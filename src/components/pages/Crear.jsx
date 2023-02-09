@@ -20,10 +20,16 @@ export const Crear = () => {
       nuevoArticulo
     );
     if (datos.status === "success") {
-      setResultado("guardado");
+      setResultado("Guardado");
+    } else {
+      setResultado("error");
+    }
 
-      //Subir la imagen
-      const fileInput = document.querySelector("#file");
+    //Subir la imagen
+    const fileInput = document.querySelector("#file");
+
+    if (datos.status === "success" && fileInput.files[0]) {
+      setResultado("guardado");
 
       const formData = new FormData();
       formData.append("file0", fileInput.files[0]);
@@ -36,13 +42,11 @@ export const Crear = () => {
       );
       // console.log(subida);
 
-      if (subida.status === "success") {
+      if (subida.datos.status === "success") {
         setResultado("guardado");
       } else {
         setResultado("error");
       }
-    } else {
-      setResultado("error");
     }
   };
 
@@ -53,6 +57,9 @@ export const Crear = () => {
 
       <strong>
         {resultado == "error" ? "Los datos proporcionados son incorrectos" : ""}
+      </strong>
+      <strong>
+        {resultado == "guardado" ? "Articulo guardado con exito!!!!" : ""}
       </strong>
       {/* Creando Formulario */}
       <form className="formulario" onSubmit={guardarArticulo}>
