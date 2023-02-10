@@ -127,6 +127,13 @@ body {
 .articulo-item h3 {
   font-size: 30px;
 }
+.articulo-item h3 a {
+  text-decoration: none;
+  color: black;
+}
+.articulo-item h3 a:hover {
+  color: rgb(97, 97, 228);
+}
 .articulo-item .edit {
   margin-right: 20px;
 }
@@ -266,4 +273,9 @@ textarea {
 .jumbo p {
   display: block;
   margin-bottom: 40px;
+}
+.jumbo .mascara {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 30%;
 }
