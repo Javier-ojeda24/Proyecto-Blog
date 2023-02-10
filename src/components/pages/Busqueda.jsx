@@ -20,6 +20,8 @@ export const Busqueda = () => {
     );
     if (datos.status === "success") {
       setArticulos(datos.articulos);
+    } else {
+      setArticulos([]);
     }
     setCargando(false);
   };
