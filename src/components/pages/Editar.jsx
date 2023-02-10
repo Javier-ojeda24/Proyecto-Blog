@@ -25,15 +25,15 @@ export const Editar = () => {
     conseguirArticulo();
   }, [articulo]);
 
-  const guardarArticulo = async (e) => {
+  const editarArticulo = async (e) => {
     e.preventDefault();
     //Recoger datos del formulario
     let nuevoArticulo = formulario;
 
     //Guardar articulo en el back
     const { datos } = await Peticion(
-      Global.url + "crear",
-      "POST",
+      Global.url + "articulo/" + params.id,
+      "PUT",
       nuevoArticulo
     );
     if (datos.status === "success") {
@@ -79,14 +79,14 @@ export const Editar = () => {
         {resultado == "guardado" ? "Articulo guardado con exito!!!!" : ""}
       </strong>
       {/* Creando Formulario */}
-      <form className="formulario" onSubmit={guardarArticulo}>
+      <form className="formulario" onSubmit={editarArticulo}>
         <div className="form-group">
           <label htmlFor="titulo">Titulo</label>
           <input
             type="text"
             name="titulo"
             onChange={cambiado}
-            value={articulo.titulo}
+            defaultValue={articulo.titulo}
           />
         </div>
 
@@ -95,7 +95,7 @@ export const Editar = () => {
           <textarea
             name="contenido"
             onChange={cambiado}
-            value={articulo.contenido}
+            defaultValue={articulo.contenido}
           />
         </div>
 
