@@ -32,6 +32,7 @@ export const Articulo = () => {
         <>
           {" "}
           <h1>{articulo.titulo}</h1>
+          <span>{articulo.fecha}</span>
           <div className="mascara">
             {articulo.imagen != "default.png" && (
               <img src={Global.url + "imagen/" + articulo.imagen} />
