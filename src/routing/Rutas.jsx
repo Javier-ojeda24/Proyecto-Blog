@@ -8,6 +8,7 @@ import { Articulo } from "../components/pages/Articulo";
 import { Articulos } from "../components/pages/Articulos";
 import { Busqueda } from "../components/pages/Busqueda";
 import { Crear } from "../components/pages/Crear";
+import { Editar } from "../components/pages/Editar";
 import { Inicio } from "../components/pages/Inicio";
 
 export const Rutas = () => {
@@ -26,6 +27,7 @@ export const Rutas = () => {
           <Route path="/crear-articulos" element={<Crear />} />
           <Route path="/buscar/:busqueda" element={<Busqueda />} />
           <Route path="/articulo/:id" element={<Articulo />} />
+          <Route path="/editar/:id" element={<Editar />} />
 
           <Route
             path="*"

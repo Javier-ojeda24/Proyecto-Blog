@@ -92,7 +92,6 @@ body {
 }
 
 /*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
-
 .content {
   grid-area: content;
   background: #f6f7f9;
@@ -142,7 +141,8 @@ body {
 .button,
 button,
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+.edit {
   text-decoration: none;
   width: 100px;
   background: #0b70e1;
@@ -276,7 +276,20 @@ textarea {
   margin-bottom: 40px;
 }
 .jumbo .mascara {
-  width: 100%;
+  width: 350px;
   overflow: hidden;
-  border-radius: 30%;
+  margin: 0 auto;
+}
+.jumbo .mascara img {
+  width: 350px;
+  margin-top: 20px;
+  margin: 5px solid #ccc;
+}
+
+.form-group .mascara {
+  width: 150px;
+  margin: 5px solid #ccc;
+}
+.form-group .mascara img {
+  width: 150px;
 }

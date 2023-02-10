@@ -33,7 +33,9 @@ export const Listado = ({ articulos, setArticulos }) => {
           </h3>
           <p className="description">{articulo.contenido}</p>
 
-          <button className="edit">Editar</button>
+          <Link to={"/editar/" + articulo._id} className="edit">
+            Editar
+          </Link>
           <button
             className="delete"
             onClick={() => {
